@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+</head>
+<body>
+    <h1>Integrantes</h1>
+        <table>
+            <tr>
+                <th ><h3>ID_INTEGRANTES</h3></th>
+                <th ><h3>NOMBRE</h3></th>
+                <th ><h3>APELLIDO</h3></th>
+                <th ><h3>EDAD</h3></th>
+                <th ><h3>IDENTIFICACIÓN</h3></th>
+                <th ><h3>ID_EQUIPO</h3></th>
+                 </tr>
+            <% integrantes.forEach(r => { %>
+                <tr>
+                    <td><%= r.ID_INTEGRANTES  %></td>
+                    <td><%= r.NOMBRE  %></td>
+                    <td><%= r.APELLIDO  %></td>
+                    <td><%= r.EDAD  %></td>
+                    <td><%= r.IDENTIFICACIÓN  %></td>
+                    <td><%= r.ID_EQUIPO  %></td>
+                </tr>
+            <% }) %>
+        </table>
+
+</body>
+</html>

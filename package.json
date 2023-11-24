@@ -1,0 +1,33 @@
+{
+  "name": "campamento_robotica",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1"
+  },
+  "description": "Actividad 2.1 realizada por Cristhofer Solarte, Verónica Parra, Henry Hernández. Servidor de base de datos para Campamento de Robótica.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verofpp/Act_2.1Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verofpp/Act_2.1Backend/issues"
+  },
+  "homepage": "https://github.com/verofpp/Act_2.1Backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

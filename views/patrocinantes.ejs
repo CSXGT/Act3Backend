@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrocinantes</title>
+</head>
+<body>
+    <h1>Patrocinantes</h1>
+        <table>
+            <tr>
+                <th ><h3>ID_PATROCINANTE</h3></th>
+                <th ><h3>NOMBRE</h3></th>
+                 </tr>
+            <% patrocinantes.forEach(r => { %>
+                <tr>
+                    <td><%= r.ID_PATROCINANTE  %></td>
+                    <td><%= r.NOMBRE  %></td>
+                </tr>
+            <% }) %>
+        </table>
+
+</body>
+</html>
