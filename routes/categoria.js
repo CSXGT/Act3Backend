@@ -1,30 +1,15 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const CategoriaController = require("../controllers/categoria.c");
+const CategoriaController = require('../controllers/categoria.c');
+const { authenticateUser } = require('../tools/authMiddleware');
+const { validarDatosModelo } = require('../tools/validation');
 
-// Mostrar categoria
-router.get('/', function(req, res, next) {
-  CategoriaController.Mostrar(res);
-});
+const CategoriaController = new CategoriaController();
 
-// Buscar un categoria según id
-router.get("/:id", function(req, res, next) {
-  CategoriaController.Buscar(res, req.params.id);
-});
-
-// Ingresar un categoria
-router.post('/', function(req, res, next) {
-  CategoriaController.Ingresar(res, req.body);
-});
-
-// Modificar un categoria
-router.put("/:id", function(req, res, next) {
-  CategoriaController.Modificar(res, req.params.id, req.body);
-});
-
-// Eliminar un categoria
-router.delete("/:id", function(req, res, next) {
-  CategoriaController.Eliminar(res, req.params.id);
-});
+router.get('/categoria', authenticateUser, CategoriaController.listarCategoria);
+router.get('/categoria/:id', authenticateUser, CategoriaController.obtenerCategoriaPorId);
+router.post('/categoria', authenticateUser, validarDatosModelo('categoria'), CategoriaController.agregarCategoria);
+router.put('/categoria/:id', authenticateUser, validarDatosModelo('categoria'), CategoriaController.editarCategoria);
+router.delete('/categoria/:id', authenticateUser, CategoriaController.eliminarCategoria);
 
 module.exports = router;
